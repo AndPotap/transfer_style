@@ -82,9 +82,7 @@ for n in range(epochs):
                    targs_style, targs_content)
         print(".", end='')
     if save_progress:
-        plt.figure()
-        imshow(image)
-        plt.savefig(output_file[:-4] + str(n) + '.png')
+        tensor_to_image(image).save(output_file[:-4] + str(n) + '.png')
     print("Train step: {}".format(step))
 
 end = time.time()
